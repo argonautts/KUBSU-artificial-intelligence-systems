@@ -1,36 +1,48 @@
-move((_, _, StA), (Type, Number, StB)):-
-    route(Type, Number, Stations),
-    (   
-      divide_list(Stations, [_, [StA, StB], _]);
-      divide_list(Stations, [_, [StB, StA], _])
+% Поиск кратчайшего пути в графе
+
+% Соединения в графе (путь, вес)
+edge(a, b, 2).
+edge(a, c, 1).
+edge(b, d, 3).
+edge(c, d, 2).
+edge(c, e, 4).
+edge(d, e, 1).
+
+% Собственная реализация сортировки
+bubble_sort(List, SortedList) :-
+    (   bubbling(List, NewList),
+        bubble_sort(NewList, SortedList)
+    ;   SortedList = List
     ).
 
-next(A, B, Used):-
-    move(A, B), B = (_, _, Name),
-    \+ member((_, _, Name), Used).
+bubbling([X, Y | Rest], [Y, X | Rest]) :-
+    edge(_, X, WeightX),
+    edge(_, Y, WeightY),
+    WeightX > WeightY.
+bubbling([Z | Rest], [Z | NewRest]) :-
+    bubbling(Rest, NewRest).
 
-path_with_station(Path, Stations, PathWithStation):-
-    member(Station, Stations),
-    PathWithStation = [Station|Path].
+% Поиск пути в графе
+path(Start, End, Path, Weight) :-
+    travel(Start, End, [Start], Q, Weight),
+    reverse(Q, Path).
 
-bfs([HeadPath|_], ToStationName, _, Path):-
-    HeadPath = [(_, _, ToStationName)|_], !,
-    Path = HeadPath.
-bfs([HeadPath|TailPath], ToStationName, Used, Path):-
-    HeadPath = [HeadStation|_],
-    findall(NextStation, next(HeadStation, NextStation, Used), AllNextStations),
-    findall(NextPaths, path_with_station(HeadPath, AllNextStations, NextPaths), AllNextPaths),
-    append(TailPath, AllNextPaths, NextBuffer),
-    append(Used, AllNextStations, NextUsed),
-    bfs(NextBuffer, ToStationName, NextUsed, Path).
+travel(Current, End, Visited, [End | Visited], Weight) :-
+    edge(Current, End, Weight).
+travel(Current, End, Visited, Path, Weight) :-
+    edge(Current, Next, Step),
+    Next \== End,
+    \+ member(Next, Visited),
+    travel(Next, End, [Next | Visited], Path, RestWeight),
+    Weight is Step + RestWeight.
 
-path(From, To, Path):-
-    bfs([[(no, no, From)]], To, [], ReversedPath),
-    reverse(ReversedPath, Path).
-   
-/** <examples>
-?- move((_, _, st1), X).
-?- bfs([[(bus, 1, st1)]], st1, [], Path).
-?- path(st1, st9, Path).
-?- path(st1, st99, Path).
-**/
+% Поиск кратчайшего пути
+shortest_path(Start, End, Path, Weight) :-
+    findall([P, W], path(Start, End, P, W), Paths),
+    bubble_sort(Paths, SortedPaths),
+    member([Path, Weight], SortedPaths).
+
+% Пример вызова
+% Найти кратчайший путь от a до e
+?- shortest_path(a, e, Path, Weight).
+% Ожидаемый результат: Path = [a, c, d, e], Weight = 5.

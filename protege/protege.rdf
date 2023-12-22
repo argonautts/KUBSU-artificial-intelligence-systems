@@ -1,0 +1,1244 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY untitled-ontology-9 "http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9/"
+     xml:base="http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:untitled-ontology-9="http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#ReplyToComment -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-9;ReplyToComment">
+        <rdfs:label>ответНаКомментарий</rdfs:label>
+        <rdfs:range rdf:resource="&untitled-ontology-9;Comment"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;Reply_Comment"/>
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-9;hasConnetion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#author -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-9;author">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>автор</rdfs:label>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;Content"/>
+        <rdfs:range rdf:resource="&untitled-ontology-9;User"/>
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-9;hasConnetion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#containsPosts -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-9;containsPosts">
+        <rdfs:label>содержитПосты</rdfs:label>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;Community"/>
+        <rdfs:range rdf:resource="&untitled-ontology-9;Post"/>
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-9;hasConnetion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#containsUsers -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-9;containsUsers">
+        <rdfs:label>содержитПользователей</rdfs:label>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;Community"/>
+        <rdfs:range rdf:resource="&untitled-ontology-9;User"/>
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-9;hasConnetion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#createPost -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-9;createPost">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>создаетПост</rdfs:label>
+        <rdfs:range rdf:resource="&untitled-ontology-9;Post"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;User"/>
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-9;hasConnetion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#gotLike -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-9;gotLike">
+        <rdfs:label>получилЛайк</rdfs:label>
+        <rdfs:range rdf:resource="&untitled-ontology-9;Like"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;Post"/>
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-9;hasConnetion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#hasAnswer -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-9;hasAnswer">
+        <rdfs:label>имеетОтвет</rdfs:label>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;Comment"/>
+        <rdfs:range rdf:resource="&untitled-ontology-9;Reply_Comment"/>
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-9;hasConnetion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#hasConnetion -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-9;hasConnetion">
+        <rdfs:label>имеетСвязь</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#hasSubscription -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-9;hasSubscription">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>имеетПодписку</rdfs:label>
+        <rdfs:range rdf:resource="&untitled-ontology-9;Subscription"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;User"/>
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-9;hasConnetion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#includesComment -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-9;includesComment">
+        <rdfs:label>включаетКомментарий</rdfs:label>
+        <rdfs:range rdf:resource="&untitled-ontology-9;Comment"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;Content"/>
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-9;hasConnetion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#isPartCommunity -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-9;isPartCommunity">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>являетсяЧастьюСообщества</rdfs:label>
+        <rdfs:range rdf:resource="&untitled-ontology-9;Community"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;Post"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;User"/>
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-9;hasConnetion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#participants -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-9;participants">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:label>участники</rdfs:label>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;Social_Interaction"/>
+        <rdfs:range rdf:resource="&untitled-ontology-9;User"/>
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-9;hasConnetion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#participatesInFriendship -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-9;participatesInFriendship">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:label>участвуетВДружбе</rdfs:label>
+        <rdfs:range rdf:resource="&untitled-ontology-9;Friendship"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;User"/>
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-9;hasConnetion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#purposeInteraction -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-9;purposeInteraction">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>цельВзаимодействия</rdfs:label>
+        <rdfs:range rdf:resource="&untitled-ontology-9;Content"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;Social_Interaction"/>
+        <rdfs:range rdf:resource="&untitled-ontology-9;User"/>
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-9;hasConnetion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#putLike -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-9;putLike">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>ставитЛайк</rdfs:label>
+        <rdfs:range rdf:resource="&untitled-ontology-9;Like"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;User"/>
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-9;hasConnetion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#recipient -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-9;recipient">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>получатель</rdfs:label>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;Message"/>
+        <rdfs:range rdf:resource="&untitled-ontology-9;User"/>
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-9;hasConnetion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#refersPost -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-9;refersPost">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>относитсяКПосту</rdfs:label>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;Comment"/>
+        <rdfs:range rdf:resource="&untitled-ontology-9;Post"/>
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-9;hasConnetion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#sendMessage -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-9;sendMessage">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>отправляетСообщение</rdfs:label>
+        <rdfs:range rdf:resource="&untitled-ontology-9;Message"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;User"/>
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-9;hasConnetion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#sender -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-9;sender">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>отправитель</rdfs:label>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;Message"/>
+        <rdfs:range rdf:resource="&untitled-ontology-9;User"/>
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-9;hasConnetion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#writeComment -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-9;writeComment">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>пишетКомментарий</rdfs:label>
+        <rdfs:range rdf:resource="&untitled-ontology-9;Comment"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;User"/>
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-9;hasConnetion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#writtenByUser -->
+
+    <owl:ObjectProperty rdf:about="&untitled-ontology-9;writtenByUser">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>написанПользователем</rdfs:label>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;Comment"/>
+        <rdfs:range rdf:resource="&untitled-ontology-9;User"/>
+        <rdfs:subPropertyOf rdf:resource="&untitled-ontology-9;hasConnetion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#DateOfComment -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-9;DateOfComment">
+        <rdfs:domain rdf:resource="&untitled-ontology-9;Comment"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#FIO -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-9;FIO">
+        <rdfs:domain rdf:resource="&untitled-ontology-9;User"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#accessLevel -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-9;accessLevel">
+        <rdfs:label>Уровень доступа</rdfs:label>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;Administrator"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;Moderator"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#accessRules -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-9;accessRules">
+        <rdfs:label>Правила доступа</rdfs:label>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;Private_Community"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#additionalText -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-9;additionalText">
+        <rdfs:label>Дополнительный текст</rdfs:label>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;Text_Post"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#dateOfBirth -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-9;dateOfBirth">
+        <rdfs:domain rdf:resource="&untitled-ontology-9;User"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#dateOfCreation -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-9;dateOfCreation">
+        <rdfs:label>Дата создания</rdfs:label>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;Community"/>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;Post"/>
+        <rdfs:range rdf:resource="&xsd;dateTimeStamp"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#dateOfDispatch -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-9;dateOfDispatch">
+        <rdfs:label>Дата отправки</rdfs:label>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;Message"/>
+        <rdfs:range rdf:resource="&xsd;dateTimeStamp"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#dateOfLikeInstallation -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-9;dateOfLikeInstallation">
+        <rdfs:label>Дата установки лайка</rdfs:label>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;Like"/>
+        <rdfs:range rdf:resource="&xsd;dateTimeStamp"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#dateOfPublication -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-9;dateOfPublication">
+        <rdfs:label>Дата публикации</rdfs:label>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;Content"/>
+        <rdfs:range rdf:resource="&xsd;dateTimeStamp"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#dateOfRegistration -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-9;dateOfRegistration">
+        <rdfs:label>Дата регистрации</rdfs:label>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;User"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#description -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-9;description">
+        <rdfs:label>Описание</rdfs:label>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;Community"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#email -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-9;email">
+        <rdfs:label>Электронная почта</rdfs:label>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;User"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#friendshipStartDate -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-9;friendshipStartDate">
+        <rdfs:label>Дата начала дружбы</rdfs:label>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;Friendship"/>
+        <rdfs:range rdf:resource="&xsd;dateTimeStamp"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#listOfPhotos -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-9;listOfPhotos">
+        <rdfs:label>Список фотографий</rdfs:label>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;Photo_Post"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#mediaLinks -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-9;mediaLinks">
+        <rdfs:label>Ссылки на медиа</rdfs:label>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;Media_Post"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#numberOfComments -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-9;numberOfComments">
+        <rdfs:label>Количество комментариев</rdfs:label>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;Post"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#numberOfLikes -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-9;numberOfLikes">
+        <rdfs:label>Количество лайков</rdfs:label>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;Post"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#responseDate -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-9;responseDate">
+        <rdfs:label>Дата ответа</rdfs:label>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;Reply_Comment"/>
+        <rdfs:range rdf:resource="&xsd;dateTimeStamp"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#responseText -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-9;responseText">
+        <rdfs:label>Текст ответа</rdfs:label>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;Reply_Comment"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#startDate -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-9;startDate">
+        <rdfs:label>Дата начала</rdfs:label>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;Social_Interaction"/>
+        <rdfs:range rdf:resource="&xsd;dateTimeStamp"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#subscriptionDate -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-9;subscriptionDate">
+        <rdfs:label>Дата подписки</rdfs:label>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;Subscription"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#text -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-9;text">
+        <rdfs:label>Текст</rdfs:label>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;Post"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#textMessage -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-9;textMessage">
+        <rdfs:label>Текст сообщения</rdfs:label>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;Message"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#textOfComment -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-9;textOfComment">
+        <rdfs:label>Текст комментария</rdfs:label>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;Comment"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#videoList -->
+
+    <owl:DatatypeProperty rdf:about="&untitled-ontology-9;videoList">
+        <rdfs:label>Список видео</rdfs:label>
+        <rdfs:domain rdf:resource="&untitled-ontology-9;Video_Post"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Administrator -->
+
+    <owl:Class rdf:about="&untitled-ontology-9;Administrator">
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-9;User"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Comment -->
+
+    <owl:Class rdf:about="&untitled-ontology-9;Comment">
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-9;Content"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Community -->
+
+    <owl:Class rdf:about="&untitled-ontology-9;Community">
+        <rdfs:label>Сообщество</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-9;Social_Network"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Content -->
+
+    <owl:Class rdf:about="&untitled-ontology-9;Content">
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-9;Social_Network"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Friendship -->
+
+    <owl:Class rdf:about="&untitled-ontology-9;Friendship">
+        <rdfs:label>Дружба</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-9;Social_Interaction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Group_Message -->
+
+    <owl:Class rdf:about="&untitled-ontology-9;Group_Message">
+        <rdfs:label>Групповое сообщение</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-9;Message"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Like -->
+
+    <owl:Class rdf:about="&untitled-ontology-9;Like">
+        <rdfs:label>Лайк</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-9;Social_Interaction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Media_Post -->
+
+    <owl:Class rdf:about="&untitled-ontology-9;Media_Post">
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-9;Post"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Message -->
+
+    <owl:Class rdf:about="&untitled-ontology-9;Message">
+        <rdfs:label>Сообщение</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-9;Social_Network"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Moderator -->
+
+    <owl:Class rdf:about="&untitled-ontology-9;Moderator">
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-9;User"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Photo_Post -->
+
+    <owl:Class rdf:about="&untitled-ontology-9;Photo_Post">
+        <rdfs:label>Фото пост</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-9;Media_Post"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Post -->
+
+    <owl:Class rdf:about="&untitled-ontology-9;Post">
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-9;Content"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Private_Community -->
+
+    <owl:Class rdf:about="&untitled-ontology-9;Private_Community">
+        <rdfs:label>Закрытое сообщество</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-9;Community"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Private_Message -->
+
+    <owl:Class rdf:about="&untitled-ontology-9;Private_Message">
+        <rdfs:label>Личное сообщение</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-9;Message"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Public_Community -->
+
+    <owl:Class rdf:about="&untitled-ontology-9;Public_Community">
+        <rdfs:label>Открытое сообщество</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-9;Community"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Regular_User -->
+
+    <owl:Class rdf:about="&untitled-ontology-9;Regular_User">
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-9;User"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Reply_Comment -->
+
+    <owl:Class rdf:about="&untitled-ontology-9;Reply_Comment">
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-9;Comment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Social_Interaction -->
+
+    <owl:Class rdf:about="&untitled-ontology-9;Social_Interaction">
+        <rdfs:label>Социальное взаимодействие</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-9;Social_Network"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Social_Network -->
+
+    <owl:Class rdf:about="&untitled-ontology-9;Social_Network"/>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Subscription -->
+
+    <owl:Class rdf:about="&untitled-ontology-9;Subscription">
+        <rdfs:label>Подписка</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-9;Social_Interaction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Text_Post -->
+
+    <owl:Class rdf:about="&untitled-ontology-9;Text_Post">
+        <rdfs:label>Текстовый пост</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-9;Post"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#User -->
+
+    <owl:Class rdf:about="&untitled-ontology-9;User">
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-9;Social_Network"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Video_Post -->
+
+    <owl:Class rdf:about="&untitled-ontology-9;Video_Post">
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-9;Media_Post"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Comment1 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;Comment1">
+        <rdf:type rdf:resource="&untitled-ontology-9;Comment"/>
+        <rdfs:label>Комментарий1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Comment2 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;Comment2">
+        <rdf:type rdf:resource="&untitled-ontology-9;Comment"/>
+        <rdfs:label>Комментарий2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Comment3 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;Comment3">
+        <rdf:type rdf:resource="&untitled-ontology-9;Comment"/>
+        <rdfs:label>Комментарий3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Comment4 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;Comment4">
+        <rdf:type rdf:resource="&untitled-ontology-9;Comment"/>
+        <rdfs:label>Комментарий4</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Comment5 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;Comment5">
+        <rdf:type rdf:resource="&untitled-ontology-9;Reply_Comment"/>
+        <rdfs:label>Комментарий5</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Comment6 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;Comment6">
+        <rdf:type rdf:resource="&untitled-ontology-9;Comment"/>
+        <rdfs:label>Комментарий6</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Community1 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;Community1">
+        <rdf:type rdf:resource="&untitled-ontology-9;Community"/>
+        <rdfs:label>Сообщество1</rdfs:label>
+        <untitled-ontology-9:gotLike rdf:resource="&untitled-ontology-9;Like1"/>
+        <untitled-ontology-9:containsPosts rdf:resource="&untitled-ontology-9;Post1"/>
+        <untitled-ontology-9:containsPosts rdf:resource="&untitled-ontology-9;Post3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Community2 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;Community2">
+        <rdf:type rdf:resource="&untitled-ontology-9;Community"/>
+        <rdfs:label>Сообщество2</rdfs:label>
+        <untitled-ontology-9:gotLike rdf:resource="&untitled-ontology-9;Like1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Community3 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;Community3">
+        <rdf:type rdf:resource="&untitled-ontology-9;Community"/>
+        <rdfs:label>Сообщество3</rdfs:label>
+        <untitled-ontology-9:gotLike rdf:resource="&untitled-ontology-9;Like1"/>
+        <untitled-ontology-9:containsPosts rdf:resource="&untitled-ontology-9;Post2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Community4 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;Community4">
+        <rdf:type rdf:resource="&untitled-ontology-9;Community"/>
+        <rdfs:label>Сообщество4</rdfs:label>
+        <untitled-ontology-9:containsPosts rdf:resource="&untitled-ontology-9;Post1"/>
+        <untitled-ontology-9:containsPosts rdf:resource="&untitled-ontology-9;Post3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Community5 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;Community5">
+        <rdf:type rdf:resource="&untitled-ontology-9;Public_Community"/>
+        <rdfs:label>Сообщество5</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#FriendShip1 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;FriendShip1">
+        <rdf:type rdf:resource="&untitled-ontology-9;Friendship"/>
+        <rdfs:label>Дружба1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Friendship2 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;Friendship2">
+        <rdf:type rdf:resource="&untitled-ontology-9;Friendship"/>
+        <rdfs:label>Дружба2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Friendship3 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;Friendship3">
+        <rdf:type rdf:resource="&untitled-ontology-9;Friendship"/>
+        <rdfs:label>Дружба3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Friendship4 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;Friendship4">
+        <rdf:type rdf:resource="&untitled-ontology-9;Friendship"/>
+        <rdfs:label>Дружба4</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Friendship5 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;Friendship5">
+        <rdf:type rdf:resource="&untitled-ontology-9;Friendship"/>
+        <rdfs:label>Дружба5</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Friendship6 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;Friendship6">
+        <rdf:type rdf:resource="&untitled-ontology-9;Friendship"/>
+        <rdfs:label>Дружба6</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Like1 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;Like1">
+        <rdf:type rdf:resource="&untitled-ontology-9;Like"/>
+        <rdfs:label>Лайк1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Like2 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;Like2">
+        <rdf:type rdf:resource="&untitled-ontology-9;Like"/>
+        <rdfs:label>Лайк2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Like3 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;Like3">
+        <rdf:type rdf:resource="&untitled-ontology-9;Like"/>
+        <rdfs:label>Лайк3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Like4 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;Like4">
+        <rdf:type rdf:resource="&untitled-ontology-9;Like"/>
+        <rdfs:label>Лайк4</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Like5 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;Like5">
+        <rdf:type rdf:resource="&untitled-ontology-9;Like"/>
+        <rdfs:label>Лайк5</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Message1 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;Message1">
+        <rdf:type rdf:resource="&untitled-ontology-9;Message"/>
+        <rdfs:label>Сообщение1</rdfs:label>
+        <untitled-ontology-9:recipient rdf:resource="&untitled-ontology-9;User1"/>
+        <untitled-ontology-9:sender rdf:resource="&untitled-ontology-9;User2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Message2 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;Message2">
+        <rdf:type rdf:resource="&untitled-ontology-9;Message"/>
+        <rdfs:label>Сообщение2</rdfs:label>
+        <untitled-ontology-9:recipient rdf:resource="&untitled-ontology-9;User1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Message3 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;Message3">
+        <rdf:type rdf:resource="&untitled-ontology-9;Message"/>
+        <rdfs:label>Сообщение3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Message4 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;Message4">
+        <rdf:type rdf:resource="&untitled-ontology-9;Message"/>
+        <rdfs:label>Сообщение4</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Message5 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;Message5">
+        <rdf:type rdf:resource="&untitled-ontology-9;Group_Message"/>
+        <rdfs:label>Сообщение5</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Message6 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;Message6">
+        <rdf:type rdf:resource="&untitled-ontology-9;Private_Message"/>
+        <rdfs:label>Сообщение6</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Post1 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;Post1">
+        <rdf:type rdf:resource="&untitled-ontology-9;Post"/>
+        <rdfs:label>Пост1</rdfs:label>
+        <untitled-ontology-9:numberOfComments>50</untitled-ontology-9:numberOfComments>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Post2 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;Post2">
+        <rdf:type rdf:resource="&untitled-ontology-9;Post"/>
+        <rdfs:label>Пост2</rdfs:label>
+        <untitled-ontology-9:numberOfComments>50</untitled-ontology-9:numberOfComments>
+        <untitled-ontology-9:text>Пример поста</untitled-ontology-9:text>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Post3 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;Post3">
+        <rdf:type rdf:resource="&untitled-ontology-9;Post"/>
+        <rdfs:label>Пост3</rdfs:label>
+        <untitled-ontology-9:text>Пример поста</untitled-ontology-9:text>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Post4 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;Post4">
+        <rdf:type rdf:resource="&untitled-ontology-9;Post"/>
+        <rdfs:label>Пост4</rdfs:label>
+        <untitled-ontology-9:text>Пример поста</untitled-ontology-9:text>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Post5 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;Post5">
+        <rdf:type rdf:resource="&untitled-ontology-9;Post"/>
+        <rdfs:label>Пост5</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Subscribe3 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;Subscribe3">
+        <rdf:type rdf:resource="&untitled-ontology-9;Subscription"/>
+        <rdfs:label>Подписка3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Subscribe4 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;Subscribe4">
+        <rdf:type rdf:resource="&untitled-ontology-9;Subscription"/>
+        <rdfs:label>Подписка4</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Subscribe5 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;Subscribe5">
+        <rdf:type rdf:resource="&untitled-ontology-9;Subscription"/>
+        <rdfs:label>Подписка5</rdfs:label>
+        <untitled-ontology-9:subscriptionDate>21.01.2016</untitled-ontology-9:subscriptionDate>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#User1 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;User1">
+        <rdf:type rdf:resource="&untitled-ontology-9;User"/>
+        <rdfs:label>Пользователь1</rdfs:label>
+        <untitled-ontology-9:dateOfRegistration>2021-05-21</untitled-ontology-9:dateOfRegistration>
+        <untitled-ontology-9:dateOfBirth>2002-09-18</untitled-ontology-9:dateOfBirth>
+        <untitled-ontology-9:FIO>Козин Александр Александрович</untitled-ontology-9:FIO>
+        <untitled-ontology-9:email>sasha_kozin2020@mail.ru</untitled-ontology-9:email>
+        <untitled-ontology-9:writeComment rdf:resource="&untitled-ontology-9;Comment1"/>
+        <untitled-ontology-9:isPartCommunity rdf:resource="&untitled-ontology-9;Community1"/>
+        <untitled-ontology-9:participatesInFriendship rdf:resource="&untitled-ontology-9;FriendShip1"/>
+        <untitled-ontology-9:putLike rdf:resource="&untitled-ontology-9;Like1"/>
+        <untitled-ontology-9:sendMessage rdf:resource="&untitled-ontology-9;Message1"/>
+        <untitled-ontology-9:createPost rdf:resource="&untitled-ontology-9;Post1"/>
+        <untitled-ontology-9:hasSubscription rdf:resource="&untitled-ontology-9;subscribe1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#User2 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;User2">
+        <rdf:type rdf:resource="&untitled-ontology-9;Administrator"/>
+        <rdf:type rdf:resource="&untitled-ontology-9;User"/>
+        <rdfs:label>Пользователь2</rdfs:label>
+        <untitled-ontology-9:email>kostya2003@mail.ru</untitled-ontology-9:email>
+        <untitled-ontology-9:dateOfBirth>2003-09-02</untitled-ontology-9:dateOfBirth>
+        <untitled-ontology-9:FIO>Лишенков Константин Денисович</untitled-ontology-9:FIO>
+        <untitled-ontology-9:dateOfRegistration>2015-05-07</untitled-ontology-9:dateOfRegistration>
+        <untitled-ontology-9:writeComment rdf:resource="&untitled-ontology-9;Comment2"/>
+        <untitled-ontology-9:isPartCommunity rdf:resource="&untitled-ontology-9;Community2"/>
+        <untitled-ontology-9:participatesInFriendship rdf:resource="&untitled-ontology-9;Friendship2"/>
+        <untitled-ontology-9:putLike rdf:resource="&untitled-ontology-9;Like2"/>
+        <untitled-ontology-9:sendMessage rdf:resource="&untitled-ontology-9;Message2"/>
+        <untitled-ontology-9:createPost rdf:resource="&untitled-ontology-9;Post2"/>
+        <untitled-ontology-9:hasSubscription rdf:resource="&untitled-ontology-9;subscribe2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#User3 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;User3">
+        <rdf:type rdf:resource="&untitled-ontology-9;Administrator"/>
+        <rdf:type rdf:resource="&untitled-ontology-9;User"/>
+        <rdfs:label>Пользователь3</rdfs:label>
+        <untitled-ontology-9:FIO>Тищенко Дмитрий Сергеевич</untitled-ontology-9:FIO>
+        <untitled-ontology-9:dateOfBirth>2002-10-25</untitled-ontology-9:dateOfBirth>
+        <untitled-ontology-9:email>d.tishenko@gmail.ru</untitled-ontology-9:email>
+        <untitled-ontology-9:dateOfRegistration>2011-01-01</untitled-ontology-9:dateOfRegistration>
+        <untitled-ontology-9:writeComment rdf:resource="&untitled-ontology-9;Comment3"/>
+        <untitled-ontology-9:isPartCommunity rdf:resource="&untitled-ontology-9;Community3"/>
+        <untitled-ontology-9:participatesInFriendship rdf:resource="&untitled-ontology-9;Friendship3"/>
+        <untitled-ontology-9:putLike rdf:resource="&untitled-ontology-9;Like3"/>
+        <untitled-ontology-9:sendMessage rdf:resource="&untitled-ontology-9;Message3"/>
+        <untitled-ontology-9:createPost rdf:resource="&untitled-ontology-9;Post3"/>
+        <untitled-ontology-9:hasSubscription rdf:resource="&untitled-ontology-9;Subscribe3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#User4 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;User4">
+        <rdf:type rdf:resource="&untitled-ontology-9;Administrator"/>
+        <rdf:type rdf:resource="&untitled-ontology-9;User"/>
+        <rdfs:label>Пользователь4</rdfs:label>
+        <untitled-ontology-9:FIO>Савчук Тарас Иванович</untitled-ontology-9:FIO>
+        <untitled-ontology-9:email>savchykchyk@mail.ru</untitled-ontology-9:email>
+        <untitled-ontology-9:dateOfRegistration>2014-02-18</untitled-ontology-9:dateOfRegistration>
+        <untitled-ontology-9:dateOfBirth>2002-03-08</untitled-ontology-9:dateOfBirth>
+        <untitled-ontology-9:writeComment rdf:resource="&untitled-ontology-9;Comment4"/>
+        <untitled-ontology-9:isPartCommunity rdf:resource="&untitled-ontology-9;Community4"/>
+        <untitled-ontology-9:participatesInFriendship rdf:resource="&untitled-ontology-9;Friendship4"/>
+        <untitled-ontology-9:putLike rdf:resource="&untitled-ontology-9;Like4"/>
+        <untitled-ontology-9:sendMessage rdf:resource="&untitled-ontology-9;Message4"/>
+        <untitled-ontology-9:createPost rdf:resource="&untitled-ontology-9;Post4"/>
+        <untitled-ontology-9:hasSubscription rdf:resource="&untitled-ontology-9;Subscribe4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#User5 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;User5">
+        <rdf:type rdf:resource="&untitled-ontology-9;Administrator"/>
+        <rdf:type rdf:resource="&untitled-ontology-9;User"/>
+        <rdfs:label>Пользователь5</rdfs:label>
+        <untitled-ontology-9:FIO>Махмудов Мэлс Мажидович</untitled-ontology-9:FIO>
+        <untitled-ontology-9:dateOfBirth>2002-02-29</untitled-ontology-9:dateOfBirth>
+        <untitled-ontology-9:dateOfBirth>2013-03-08</untitled-ontology-9:dateOfBirth>
+        <untitled-ontology-9:email>melsikboy@mail.ru</untitled-ontology-9:email>
+        <untitled-ontology-9:description>Просто парень</untitled-ontology-9:description>
+        <untitled-ontology-9:writeComment rdf:resource="&untitled-ontology-9;Comment5"/>
+        <untitled-ontology-9:writeComment rdf:resource="&untitled-ontology-9;Comment6"/>
+        <untitled-ontology-9:isPartCommunity rdf:resource="&untitled-ontology-9;Community5"/>
+        <untitled-ontology-9:participatesInFriendship rdf:resource="&untitled-ontology-9;FriendShip1"/>
+        <untitled-ontology-9:participatesInFriendship rdf:resource="&untitled-ontology-9;Friendship5"/>
+        <untitled-ontology-9:participatesInFriendship rdf:resource="&untitled-ontology-9;Friendship6"/>
+        <untitled-ontology-9:putLike rdf:resource="&untitled-ontology-9;Like5"/>
+        <untitled-ontology-9:sendMessage rdf:resource="&untitled-ontology-9;Message5"/>
+        <untitled-ontology-9:sendMessage rdf:resource="&untitled-ontology-9;Message6"/>
+        <untitled-ontology-9:createPost rdf:resource="&untitled-ontology-9;Post5"/>
+        <untitled-ontology-9:hasSubscription rdf:resource="&untitled-ontology-9;Subscribe5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#subscribe1 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;subscribe1">
+        <rdf:type rdf:resource="&untitled-ontology-9;Subscription"/>
+        <rdfs:label>Подписка1</rdfs:label>
+        <untitled-ontology-9:subscriptionDate>21.01.2016</untitled-ontology-9:subscriptionDate>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#subscribe2 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;subscribe2">
+        <rdf:type rdf:resource="&untitled-ontology-9;Subscription"/>
+        <rdfs:label>Подписка2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/argonauttz/ontologies/2023/11/untitled-ontology-9#Пользователь6 -->
+
+    <owl:NamedIndividual rdf:about="&untitled-ontology-9;Пользователь6">
+        <rdf:type rdf:resource="&untitled-ontology-9;Administrator"/>
+        <rdf:type rdf:resource="&untitled-ontology-9;User"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
